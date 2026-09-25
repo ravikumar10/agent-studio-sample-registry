@@ -1,0 +1,2 @@
+spring.application.name: chart-mcp
+management.endpoints.web.exposure.include: health,info

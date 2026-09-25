@@ -8,6 +8,9 @@ This repository demonstrates the portable Agent Studio registry format. `catalog
 - `mcp/`: MCP server manifests. Deployment URLs and secrets are supplied by the client.
 - `skills/`: reusable operating instructions loaded with progressive disclosure.
 - `configurations/`: JSON Schemas used by Agent Studio to build organization-scoped integration forms.
+- `implementations/`: buildable reference server source and Dockerfiles for every MCP manifest.
+
+Build any server with `docker build -t <name>:local implementations/<name>`. Registry manifests carry both an immutable release-image reference and a reviewable source path. Production promotion should build, scan, sign, and pin the resulting image digest before approval.
 
 ## Included examples
 

@@ -1,6 +1,7 @@
 {
   "schemaVersion":"1.0","id":"slack-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
   "implementation":{"image":"ghcr.io/ravikumar10/slack-mcp:1.0.0","port":8080},
+  "source":{"path":"implementations/slack-mcp","dockerfile":"implementations/slack-mcp/Dockerfile"},
   "configurationSchema":"configurations/slack.schema.json",
   "tools":[
     {"name":"slack.messages.read","risk":"READ_SENSITIVE","sideEffect":false,"description":"Read a bounded message history from an approved channel."},

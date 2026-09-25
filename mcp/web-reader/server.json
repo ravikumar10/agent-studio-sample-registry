@@ -1,6 +1,7 @@
 {
   "schemaVersion":"1.0","id":"web-reader-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
   "implementation":{"image":"ghcr.io/ravikumar10/web-reader-mcp:1.0.0","port":8080},
+  "source":{"path":"implementations/catalog-reader-mcp","dockerfile":"implementations/catalog-reader-mcp/Dockerfile"},
   "configuration":["WEB_ALLOWED_HOSTS","WEB_MAX_BYTES","WEB_TIMEOUT_MS"],
   "tools":[
     {"name":"web.fetch","risk":"READ_EXTERNAL","sideEffect":false,"description":"Fetch an allow-listed public HTTP(S) URL."},

@@ -1,0 +1,4 @@
+spring.application.name: redis-memory-mcp
+spring.data.redis.host: ${REDIS_HOST:redis}
+spring.data.redis.port: ${REDIS_PORT:6379}
+management.endpoints.web.exposure.include: health,info

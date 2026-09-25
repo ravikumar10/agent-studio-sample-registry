@@ -1,6 +1,7 @@
 {
   "schemaVersion":"1.0","id":"headless-browser-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
   "implementation":{"image":"ghcr.io/ravikumar10/headless-browser-mcp:1.0.0","port":8080},
+  "source":{"path":"implementations/headless-browser-mcp","dockerfile":"implementations/headless-browser-mcp/Dockerfile"},
   "configurationSchema":"configurations/headless-browser.schema.json",
   "tools":[
     {"name":"browser.navigate","risk":"READ_EXTERNAL","sideEffect":false,"description":"Navigate to a public HTTP(S) page after network-policy validation."},

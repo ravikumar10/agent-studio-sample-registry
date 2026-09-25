@@ -1,6 +1,7 @@
 {
   "schemaVersion":"1.0","id":"redis-memory-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
   "implementation":{"image":"ghcr.io/ravikumar10/redis-memory-mcp:1.0.0","port":8080},
+  "source":{"path":"implementations/redis-memory-mcp","dockerfile":"implementations/redis-memory-mcp/Dockerfile"},
   "configurationSchema":"configurations/redis-memory.schema.json",
   "tools":[
     {"name":"memory.get","risk":"READ_SENSITIVE","sideEffect":false,"description":"Read a tenant-scoped hot-memory value."},
