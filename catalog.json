@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "name": "Agent Studio sample registry",
+  "artifacts": [
+    {"id":"website-reader","type":"AGENT","name":"Website Reader","version":"1.0.0","path":"agents/website-reader/agent.json","description":"Reads a public web page and returns grounded structured notes."},
+    {"id":"database-reader","type":"AGENT","name":"Database Reader","version":"1.0.0","path":"agents/database-reader/agent.json","description":"Answers read-only questions against an approved database capability."},
+    {"id":"web-reader-mcp","type":"MCP","name":"Web Reader MCP","version":"1.0.0","path":"mcp/web-reader/server.json","description":"Fetch and extract tools for allow-listed HTTP pages."},
+    {"id":"database-reader-mcp","type":"MCP","name":"Database Reader MCP","version":"1.0.0","path":"mcp/database-reader/server.json","description":"Schema discovery and parameterized read-only query tools."},
+    {"id":"website-research","type":"SKILL","name":"Website Research","version":"1.0.0","path":"skills/website-research/SKILL.md","description":"Grounded workflow for reading and citing web pages."},
+    {"id":"database-analysis","type":"SKILL","name":"Database Analysis","version":"1.0.0","path":"skills/database-analysis/SKILL.md","description":"Safe workflow for exploring and querying relational data."}
+  ]
+}

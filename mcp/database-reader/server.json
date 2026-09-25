@@ -1,0 +1,10 @@
+{
+  "schemaVersion":"1.0","id":"database-reader-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
+  "implementation":{"image":"ghcr.io/ravikumar10/database-reader-mcp:1.0.0","port":8080},
+  "configuration":["DATABASE_CONNECTION_SECRET_REF","DATABASE_ALLOWED_SCHEMAS","DATABASE_QUERY_TIMEOUT_MS","DATABASE_MAX_ROWS"],
+  "tools":[
+    {"name":"database.describe-schema","risk":"READ_ONLY","sideEffect":false,"description":"Describe allow-listed schemas without returning credentials."},
+    {"name":"database.query-readonly","risk":"READ_SENSITIVE","sideEffect":false,"description":"Run one parameterized SELECT after policy validation."}
+  ],
+  "security":{"readOnlyTransaction":true,"rejectMultipleStatements":true,"rejectDdlAndDml":true,"credentials":"secretRef"}
+}

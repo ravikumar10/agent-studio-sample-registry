@@ -1,0 +1,8 @@
+{
+  "schemaVersion":"1.0","id":"database-reader","version":"1.0.0","displayName":"Database Reader",
+  "description":"Inspect an approved schema and answer questions using read-only parameterized queries.",
+  "runtime":"CONFIG","modelProfile":"balanced-text","skills":["database-analysis@1.0.0"],
+  "capabilities":["database.describe-schema","database.query-readonly"],"memory":{"read":["analysis"],"write":"analysis","tier":"COLD"},
+  "inputSchema":{"type":"object","required":["connectionRef","question"],"properties":{"connectionRef":{"type":"string"},"question":{"type":"string"}}},
+  "outputSchema":{"type":"object","required":["answer","evidence"],"properties":{"answer":{"type":"string"},"evidence":{"type":"array","items":{"type":"object"}}}}
+}

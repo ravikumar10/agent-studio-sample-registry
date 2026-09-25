@@ -1,0 +1,8 @@
+{
+  "schemaVersion":"1.0","id":"website-reader","version":"1.0.0","displayName":"Website Reader",
+  "description":"Read an approved public page, extract its main content, and return cited notes.",
+  "runtime":"CONFIG","modelProfile":"balanced-text","skills":["website-research@1.0.0"],
+  "capabilities":["web.fetch","web.extract"],"memory":{"read":["research"],"write":"research","tier":"BOTH"},
+  "inputSchema":{"type":"object","required":["url"],"properties":{"url":{"type":"string","format":"uri"},"question":{"type":"string"}}},
+  "outputSchema":{"type":"object","required":["summary","sources"],"properties":{"summary":{"type":"string"},"sources":{"type":"array","items":{"type":"string"}}}}
+}
