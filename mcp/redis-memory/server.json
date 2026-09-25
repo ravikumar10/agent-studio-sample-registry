@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0","id":"redis-memory-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
+  "implementation":{"image":"ghcr.io/ravikumar10/redis-memory-mcp:1.0.0","port":8080},
+  "configurationSchema":"configurations/redis-memory.schema.json",
+  "tools":[
+    {"name":"memory.get","risk":"READ_SENSITIVE","sideEffect":false,"description":"Read a tenant-scoped hot-memory value."},
+    {"name":"memory.put","risk":"WRITE_INTERNAL","sideEffect":true,"description":"Store a bounded tenant-scoped memory value with TTL."},
+    {"name":"memory.search","risk":"READ_SENSITIVE","sideEffect":false,"description":"Retrieve semantically relevant prior evidence from the configured vector index."}
+  ],
+  "security":{"tenantKeyPrefixRequired":true,"ttlRequired":true,"credentials":"secretRef"}
+}

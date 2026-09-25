@@ -1,0 +1,10 @@
+{
+  "schemaVersion":"1.0","id":"chart-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
+  "implementation":{"image":"ghcr.io/ravikumar10/chart-mcp:1.0.0","port":8080},
+  "configurationSchema":"configurations/chart.schema.json",
+  "tools":[
+    {"name":"chart.generate","risk":"TRANSFORM","sideEffect":false,"description":"Create one or more validated Vega-Lite chart documents from supplied evidence."},
+    {"name":"chart.render-png","risk":"TRANSFORM","sideEffect":false,"description":"Render an approved chart document to a downloadable PNG artifact."}
+  ],
+  "security":{"maxRows":5000,"maxChartsPerResponse":8,"rejectRemoteDataSources":true}
+}

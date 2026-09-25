@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0","id":"scheduled-data-report-agent","version":"1.0.0","displayName":"Scheduled Data Report Agent",
+  "description":"Run a saved reporting objective on a schedule using read-only database data, charts, and Slack delivery.",
+  "runtime":"CONFIG","interface":"RUN_ONCE","topology":"SINGLE_AGENT","modelProfile":"balanced-text",
+  "skills":["database-analysis@1.0.0","visual-reporting@1.0.0","slack-delivery@1.0.0"],
+  "capabilities":["database.describe-schema","database.query-readonly","chart.generate","chart.render-png","slack.messages.send"],
+  "trigger":{"type":"SCHEDULE","schedule":"0 9 * * 1-5","timezone":"organization","inputSource":"savedPrompt"},
+  "toolPolicy":{"dataMustComeFromTools":true,"maxIterations":8,"deferCapabilities":["slack.messages.send"]},
+  "inputSchema":{"type":"object","required":["message"],"properties":{"message":{"type":"string"}}},
+  "outputSchema":{"type":"object","required":["blocks"],"properties":{"blocks":{"type":"array"}}}
+}

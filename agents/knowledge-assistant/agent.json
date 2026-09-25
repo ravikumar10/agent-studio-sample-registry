@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0","id":"knowledge-assistant-agent","version":"1.0.0","displayName":"Knowledge Assistant",
+  "description":"Answer grounded questions from public research while preserving reusable evidence for contextual follow-ups.",
+  "runtime":"CONFIG","interface":"CHAT","topology":"SINGLE_AGENT","modelProfile":"balanced-text",
+  "skills":["website-research@1.0.0","memory-grounding@1.0.0"],
+  "capabilities":["memory.search","memory.get","memory.put","web.fetch","web.extract"],
+  "toolPolicy":{"dataMustComeFromTools":true,"maxIterations":6,"cacheFreshnessSeconds":3600},
+  "memory":{"read":["conversation","research"],"write":"research","tier":"BOTH"},
+  "inputSchema":{"type":"object","required":["message"],"properties":{"message":{"type":"string"}}},
+  "outputSchema":{"type":"object","required":["blocks","sources"],"properties":{"blocks":{"type":"array"},"sources":{"type":"array","items":{"type":"string"}}}}
+}

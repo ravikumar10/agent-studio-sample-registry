@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Redis memory configuration","type":"object","additionalProperties":false,
+  "properties":{"host":{"type":"string","minLength":1},"port":{"type":"integer","minimum":1,"maximum":65535,"default":6379},"database":{"type":"integer","minimum":0,"default":0},"tls":{"type":"boolean","default":true},"keyPrefix":{"type":"string","default":"agent-studio"},"defaultTtlSeconds":{"type":"integer","minimum":60,"default":86400},"vectorIndex":{"type":"string"},"username":{"type":"string","writeOnly":true},"password":{"type":"string","writeOnly":true}},
+  "required":["host","port","keyPrefix"]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0","id":"research-report-agent","version":"1.0.0","displayName":"Research Report Agent",
+  "description":"Research public websites, synthesize grounded findings, generate useful charts, and optionally deliver the final response to Slack.",
+  "runtime":"CONFIG","interface":"CHAT","topology":"SINGLE_AGENT","modelProfile":"balanced-text",
+  "skills":["website-research@1.0.0","visual-reporting@1.0.0","slack-delivery@1.0.0"],
+  "capabilities":["web.fetch","web.extract","browser.navigate","browser.extract","chart.generate","chart.render-png","slack.messages.send"],
+  "toolPolicy":{"dataMustComeFromTools":true,"maxIterations":8,"deferCapabilities":["slack.messages.send"]},
+  "memory":{"read":["research"],"write":"research","tier":"BOTH"},
+  "inputSchema":{"type":"object","required":["message"],"properties":{"message":{"type":"string"}}},
+  "outputSchema":{"type":"object","required":["blocks","sources"],"properties":{"blocks":{"type":"array"},"sources":{"type":"array","items":{"type":"string"}}}}
+}

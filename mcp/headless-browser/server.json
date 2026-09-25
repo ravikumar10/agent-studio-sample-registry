@@ -1,0 +1,12 @@
+{
+  "schemaVersion":"1.0","id":"headless-browser-mcp","version":"1.0.0","protocol":"MCP","transport":"STREAMABLE_HTTP",
+  "implementation":{"image":"ghcr.io/ravikumar10/headless-browser-mcp:1.0.0","port":8080},
+  "configurationSchema":"configurations/headless-browser.schema.json",
+  "tools":[
+    {"name":"browser.navigate","risk":"READ_EXTERNAL","sideEffect":false,"description":"Navigate to a public HTTP(S) page after network-policy validation."},
+    {"name":"browser.extract","risk":"READ_EXTERNAL","sideEffect":false,"description":"Extract visible text, links, tables, and metadata from the active page."},
+    {"name":"browser.screenshot","risk":"READ_EXTERNAL","sideEffect":false,"description":"Capture a bounded screenshot artifact."},
+    {"name":"browser.act","risk":"WRITE_EXTERNAL","sideEffect":true,"description":"Perform an approved click or form action with policy enforcement and audit."}
+  ],
+  "security":{"denyPrivateNetworks":true,"requireApprovalForSideEffects":true,"credentials":"secretRef"}
+}

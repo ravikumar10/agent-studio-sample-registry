@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Headless Browser configuration","type":"object","additionalProperties":false,
+  "properties":{"allowedHosts":{"type":"array","items":{"type":"string"},"default":["*"]},"timeoutSeconds":{"type":"integer","minimum":1,"maximum":120,"default":30},"allowActions":{"type":"boolean","default":false},"maxPages":{"type":"integer","minimum":1,"maximum":50,"default":10}},
+  "required":["allowedHosts","timeoutSeconds"]
+}

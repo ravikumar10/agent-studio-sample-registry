@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","title":"Slack configuration","type":"object","additionalProperties":false,
+  "properties":{"workspaceId":{"type":"string","pattern":"^T[A-Z0-9]+$"},"defaultChannel":{"type":"string","pattern":"^[CGD][A-Z0-9]+$"},"botToken":{"type":"string","writeOnly":true,"pattern":"^xoxb-"}},
+  "required":["workspaceId","defaultChannel","botToken"]
+}
